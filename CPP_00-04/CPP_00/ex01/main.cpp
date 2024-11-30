@@ -1,5 +1,13 @@
 #include "PhoneBook.hpp"
 
+std::string toUpperCase(const std::string &str) {
+	std::string result = str;
+	for (char &c : result) {
+		c = std::toupper(static_cast<unsigned char>(c));
+	}
+	return result;
+}
+
 int main()
 {
 	PhoneBook phoneBook;
@@ -7,12 +15,13 @@ int main()
 
 	while (true)
 	{
-		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
+		std::cout << "Enter a command (ADD(add), SEARCH(search), EXIT(exit)): ";
 		if (!std::getline(std::cin, command)) {
 			std::cout << "\nError reading input. Exiting.\n";
 			break;
 	}
 
+	command = toUpperCase(command);
 	if (command == "ADD") {
 		std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 	
