@@ -1,7 +1,7 @@
 # ============================================
 # ||  🖥️  BUILD SYSTEM v1.0       ||
 # ============================================
-# ||  Project: BraiiiiiiinnnzzzZ             ||
+# ||  Project: BraiiiiiiinnnzzzZ              ||
 # ||  Author: Abdurahim Hudulov               ||
 # ||  Date: 2024                              ||
 # ============================================
