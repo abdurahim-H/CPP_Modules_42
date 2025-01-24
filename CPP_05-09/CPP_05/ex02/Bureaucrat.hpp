@@ -39,6 +39,8 @@ class Bureaucrat
 		};
 
 		friend std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
+
+		void executeForm(Form const & form);
 };
 
 #endif

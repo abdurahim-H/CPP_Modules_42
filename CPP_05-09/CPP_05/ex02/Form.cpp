@@ -42,6 +42,10 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "Form grade is too low!";
 }
 
+const char* Form::FormNotSignedException::what() const throw() {
+	return "Form is not signed";
+}
+
 std::string Form::getName() const {
 	return _name;
 }

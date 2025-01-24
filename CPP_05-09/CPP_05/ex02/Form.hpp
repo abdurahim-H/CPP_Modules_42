@@ -36,6 +36,12 @@ class Form
 		class GradeTooLowException : public std::exception {
 			virtual const char* what() const throw();
 		};
+
+		class FormNotSignedException : public std::exception {
+			virtual const char* what() const throw();
+		};
+
+		virtual void execute(const Bureaucrat &executor) const = 0;
 };
 
 #endif
