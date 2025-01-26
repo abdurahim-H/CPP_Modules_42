@@ -3,7 +3,7 @@
 # ============================================
 # ||  Project: ex03 - Bureaucrat + Intern   ||
 # ||  Author: Abdurahim Hudulov             ||
-# ||  Date: 2024                            ||
+# ||  Date: 2025                            ||
 # ============================================
 
 # Colors
