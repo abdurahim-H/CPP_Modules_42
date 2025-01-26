@@ -1,44 +1,61 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib>    // for srand, rand if you want
+#include <ctime>      // for time
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
+#include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
 int main()
 {
     srand(time(NULL));
-    // Create some Bureaucrats
-    Bureaucrat highRank("HighRank", 1);    
-    Bureaucrat midRank("MidRank", 50);     
-    Bureaucrat lowRank("LowRank", 140);    
+    Intern someRandomIntern;
 
-    // Create forms
-    ShrubberyCreationForm shrub("home");
-    RobotomyRequestForm robo("Bender");
-    PresidentialPardonForm pardon("Arthur Dent");
+    Form* rrf;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-    std::cout << "\n--- Testing: LowRank tries to sign/execute ShrubberyCreationForm ---" << std::endl;
-    lowRank.signForm(shrub);      
-    lowRank.executeForm(shrub);   
+    Form* scf;
+    scf = someRandomIntern.makeForm("shrubbery creation", "home");
 
-    std::cout << "\n--- Testing: MidRank tries to sign/execute PresidentialPardonForm ---" << std::endl;
-    midRank.signForm(pardon);
+    Form* ppf;
+    ppf = someRandomIntern.makeForm("presidential pardon", "Arthur Dent");
 
-    midRank.executeForm(pardon);
+    Form* unknown;
+    unknown = someRandomIntern.makeForm("super important form", "TestTarget");
 
-    std::cout << "\n--- Testing: HighRank tries to sign/execute RobotomyRequestForm ---" << std::endl;
-    highRank.signForm(robo);
-    highRank.executeForm(robo);
+    std::cout << "\n--- Checking the returned form pointers ---" << std::endl;
+    if (!rrf) std::cout << "rrf is nullptr!\n";
+    if (!scf) std::cout << "scf is nullptr!\n";
+    if (!ppf) std::cout << "ppf is nullptr!\n";
+    if (!unknown) std::cout << "unknown is nullptr (good, as 'super important form' is invalid)\n";
 
-    std::cout << "\n--- HighRank tries to sign/execute ShrubberyCreationForm ---" << std::endl;
-    highRank.signForm(shrub);
-    highRank.executeForm(shrub);
+    Bureaucrat boss("Boss", 1);
+    Bureaucrat junior("Junior", 70);
 
-    std::cout << "\n--- HighRank tries to sign/execute PresidentialPardonForm ---" << std::endl;
-    highRank.signForm(pardon);
-    highRank.executeForm(pardon);
+    std::cout << "\n--- Boss tries to sign & execute the RobotomyRequestForm ---" << std::endl;
+    if (rrf) {
+        boss.signForm(*rrf);
+        boss.executeForm(*rrf); 
+    }
+
+    std::cout << "\n--- Junior tries to sign & execute the ShrubberyCreationForm ---" << std::endl;
+    if (scf) {
+        junior.signForm(*scf); 
+        junior.executeForm(*scf);
+    }
+
+    std::cout << "\n--- Junior tries to sign & execute the PresidentialPardonForm ---" << std::endl;
+    if (ppf) {
+        junior.signForm(*ppf);
+        junior.executeForm(*ppf);
+    }
+
+    delete rrf;
+    delete scf;
+    delete ppf;
+    delete unknown;
 
     return 0;
 }
