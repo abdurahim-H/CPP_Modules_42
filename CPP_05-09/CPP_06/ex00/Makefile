@@ -27,7 +27,7 @@ SRCS     = main.cpp ScalarConverter.cpp
 OBJS     = $(SRCS:.cpp=.o)
 
 # Target Executable
-TARGET   = ex00
+TARGET   = convert
 
 # Fancy Styling
 SEP_LINE  = "$(BLUE)===========================================$(NC)"
