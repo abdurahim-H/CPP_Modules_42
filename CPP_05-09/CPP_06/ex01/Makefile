@@ -23,7 +23,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 LDFLAGS  =
 
 # Source Files
-SRCS     = main.cpp Serializer.cpp Data.cpp
+SRCS     = main.cpp Serializer.cpp
 OBJS     = $(SRCS:.cpp=.o)
 
 # Target Executable
