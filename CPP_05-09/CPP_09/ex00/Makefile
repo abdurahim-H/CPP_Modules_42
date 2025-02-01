@@ -2,8 +2,8 @@
 # ||  🔦  BUILD SYSTEM v1.4                ||
 # ============================================
 # ||  Project: ex00 - Bitcoin Exchange      ||
-# ||  Author: Abdurahim Hudulov              ||
-# ||  Date: 2025                             ||
+# ||  Author: Abdurahim Hudulov             ||
+# ||  Date: 2025                            ||
 # ============================================
 
 # Colors
