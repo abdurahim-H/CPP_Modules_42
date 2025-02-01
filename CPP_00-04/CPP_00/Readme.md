@@ -11,10 +11,18 @@
       100% { opacity: 1; }
     }
     
-    #text1 { animation: fadeIn 1s ease-in-out forwards; }
-    #text2 { animation: fadeIn 1s ease-in-out 2s forwards; }
-    #text3 { animation: fadeIn 1s ease-in-out 4s forwards; }
+    #text1 { animation: fadeIn 1s ease-in-out forwards; opacity: 0; }
+    #text2 { animation: fadeIn 1s ease-in-out 2s forwards; opacity: 0; }
+    #text3 { animation: fadeIn 1s ease-in-out 4s forwards; opacity: 0; }
   </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(() => document.getElementById('text1').setAttribute('opacity', '1'), 500);
+      setTimeout(() => document.getElementById('text2').setAttribute('opacity', '1'), 2000);
+      setTimeout(() => document.getElementById('text3').setAttribute('opacity', '1'), 4000);
+    });
+  </script>
 </svg>
 
 
