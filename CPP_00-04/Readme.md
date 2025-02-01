@@ -1,3 +1,5 @@
+![C++](https://img.shields.io/badge/C++-98-blue?logo=cplusplus) ![License](https://img.shields.io/badge/License-Free-red) ![Zombies](https://img.shields.io/badge/Zombies-Approved-green)
+
 # **Comprehensive Analysis of C++ Modules (Part I: 00 - 04)**
 
 The **C++ Modules** constitute an extensively structured and analytically rigorous curriculum designed to refine proficiency in modern **C++ programming paradigms**. This foundational repository covers **Modules 00 to 04**, each encapsulating a progressive exploration of fundamental programming constructs, memory architecture, object-oriented principles, and computational efficiency.
