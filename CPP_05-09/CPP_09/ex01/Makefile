@@ -26,9 +26,9 @@ LDFLAGS  =
 NAME     = RPN
 
 # Source Files
-SRCS     = main.cpp RPN.cpp
+SRCS     = main.cpp
 
-# Header Files
+# Header Files - not using it currently
 HEADERS  = RPN.hpp
 
 # Object Files
