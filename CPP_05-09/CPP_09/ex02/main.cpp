@@ -4,6 +4,10 @@
 #include <vector>
 #include <cctype>
 #include <deque>
+#include <ctime>
+
+void sortVector(std::vector<int>& vec);
+void sortDeque(std::deque<int>& deq);
 
 int main(int argc, char **argv)
 {
@@ -39,15 +43,33 @@ int main(int argc, char **argv)
 	std::deque<int> numbersDeque(numbers.begin(), numbers.end());
 
 	std::cout << "Before: ";
-	for (size_t k = 0; k < numbers.size(); ++k) {
-		std::cout << numbers[k] << " ";
-	}
+    for (size_t i = 0; i < numbers.size(); ++i) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << std::endl;
 
-	std::cout << "\nBefore (deque): ";
-	for (std::deque<int>::iterator it = numbersDeque.begin(); it != numbersDeque.end(); ++it) {
-		std::cout << *it << " ";
-	}
+	clock_t startVector = clock();
+	sortVector(numbers);
+	clock_t endVector = clock();
+	double elapsedVector = (double)(endVector - startVector) * 1e6 / CLOCKS_PER_SEC;
+
+	clock_t startDeque = clock();
+	sortDeque(numbersDeque);
+	clock_t endDeque = clock();
+	double elapsedDeque = (double)(endDeque - startDeque) * 1e6 / CLOCKS_PER_SEC;
+
+	std::cout << "After: ";
+    for (size_t i = 0; i < numbers.size(); ++i) {
+        std::cout << numbers[i] << " ";
+    }
+
 	std::cout << std::endl;
+
+	std::cout << "Time to process a range of " << numbers.size()
+		<< " elements with std::vector : " << elapsedVector << " us" << std::endl;
+	std::cout << "Time to process a range of " << numbersDeque.size()
+		<< " elements with std::deque : " << elapsedDeque << " us" << std::endl;
+
 
 	return 0;
 }
