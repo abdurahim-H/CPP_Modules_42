@@ -1,3 +1,38 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black"/>
+  
+  <text x="50" y="100" font-size="30" font-family="Arial" fill="white" opacity="0" id="text1">shhhhh...</text>
+  <text x="50" y="100" font-size="30" font-family="Arial" fill="white" opacity="0" id="text2">SHHHHH...</text>
+  <text x="50" y="100" font-size="30" font-family="Arial" fill="red" opacity="0" id="text3">SHHHHH... I THINK THE STUDENTS ARE ASLEEP!</text>
+
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+    
+    #text1 { animation: fadeIn 1s ease-in-out forwards; }
+    #text2 { animation: fadeIn 1s ease-in-out 1.5s forwards; opacity: 0; }
+    #text3 { animation: fadeIn 1s ease-in-out 3s forwards; opacity: 0; }
+
+    #text1.show { opacity: 1; }
+    #text2.show { opacity: 1; }
+    #text3.show { opacity: 1; }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(() => document.getElementById('text1').classList.add('show'), 500);
+      setTimeout(() => document.getElementById('text1').classList.remove('show'), 1500);
+      setTimeout(() => document.getElementById('text2').classList.add('show'), 2000);
+      setTimeout(() => document.getElementById('text2').classList.remove('show'), 3000);
+      setTimeout(() => document.getElementById('text3').classList.add('show'), 3500);
+    });
+  </script>
+</svg>
+
+
 # C++ Module 00 - The Awakening
 
 Welcome, fellow code whisperer, to **C++ Module 00**, where we take our first fearless steps into the untamed wilds of C++. This module isn’t about "Hello, World!"—it’s about making noise, commanding attention, and managing chaos with an **awesome** (and totally not outdated) phonebook.
@@ -31,6 +66,12 @@ DAMNIT ! SORRY STUDENTS, I THOUGHT THIS THING WAS OFF.
 
 $> ./megaphone
 * LOUD AND UNBEARABLE FEEDBACK NOISE *
+```
+
+### 🎬 Megaphone Animation
+
+```md
+<img src="megaphone_animation.svg" />
 ```
 
 ## 📞 My Awesome PhoneBook: A Digital Relic (ex01)
@@ -106,4 +147,3 @@ Darkest Secret: Likes pineapple pizza
 This module **isn't** just an introduction. It’s a **baptism by fire**, an initiation into the art of **thinking in C++**. Here, we embrace **the raw power of the language**—no hand-holding, no shortcuts, just **pure, unfiltered problem-solving**.
 
 So go forth, code warrior, and **MAKE SOME NOISE.** 🔥
-
