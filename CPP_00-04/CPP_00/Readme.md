@@ -2,34 +2,19 @@
   <rect width="100%" height="100%" fill="black"/>
   
   <text x="50" y="100" font-size="30" font-family="Arial" fill="white" opacity="0" id="text1">shhhhh...</text>
-  <text x="50" y="100" font-size="30" font-family="Arial" fill="white" opacity="0" id="text2">SHHHHH...</text>
-  <text x="50" y="100" font-size="30" font-family="Arial" fill="red" opacity="0" id="text3">SHHHHH... I THINK THE STUDENTS ARE ASLEEP!</text>
+  <text x="50" y="140" font-size="30" font-family="Arial" fill="white" opacity="0" id="text2">SHHHHH...</text>
+  <text x="50" y="180" font-size="30" font-family="Arial" fill="red" opacity="0" id="text3">SHHHHH... I THINK THE STUDENTS ARE ASLEEP!</text>
 
   <style>
     @keyframes fadeIn {
       0% { opacity: 0; }
-      50% { opacity: 1; }
       100% { opacity: 1; }
     }
     
     #text1 { animation: fadeIn 1s ease-in-out forwards; }
-    #text2 { animation: fadeIn 1s ease-in-out 1.5s forwards; opacity: 0; }
-    #text3 { animation: fadeIn 1s ease-in-out 3s forwards; opacity: 0; }
-
-    #text1.show { opacity: 1; }
-    #text2.show { opacity: 1; }
-    #text3.show { opacity: 1; }
+    #text2 { animation: fadeIn 1s ease-in-out 2s forwards; }
+    #text3 { animation: fadeIn 1s ease-in-out 4s forwards; }
   </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(() => document.getElementById('text1').classList.add('show'), 500);
-      setTimeout(() => document.getElementById('text1').classList.remove('show'), 1500);
-      setTimeout(() => document.getElementById('text2').classList.add('show'), 2000);
-      setTimeout(() => document.getElementById('text2').classList.remove('show'), 3000);
-      setTimeout(() => document.getElementById('text3').classList.add('show'), 3500);
-    });
-  </script>
 </svg>
 
 
