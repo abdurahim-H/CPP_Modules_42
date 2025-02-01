@@ -7,9 +7,9 @@
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, float> data;
-	
+		//
 	public:
+		std::map<std::string, float> data;
 		BitcoinExchange();
 		~BitcoinExchange();
 		void loadDataFromCSV(const std::string &filename);

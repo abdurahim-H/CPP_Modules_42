@@ -8,9 +8,9 @@ BitcoinExchange::BitcoinExchange() {}
 BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::loadDataFromCSV(const std::string &filename) {
-	std::ifstream file(filename);
+	std::ifstream file(filename.c_str());
 	if (!file.is_open()) {
-		std::cerr << "Error: cannot open file." << std::endl;
+		std::cerr << "Error: cannot open file." << filename << std::endl;
 		return;
 	}
 	// std::string line;
@@ -29,9 +29,11 @@ void BitcoinExchange::loadDataFromCSV(const std::string &filename) {
 	// if (isHeader && std::getline(file, line)) {
 	// 	//
 	// }
-	std::string headerLine;
-	if (std::getline(file, headerLine)) {
-		//
+	{
+		std::string headerLine;
+		if (std::getline(file, headerLine)) {
+			//
+		}
 	}
 	std::string line;
 	while (std::getline(file, line))
@@ -48,9 +50,19 @@ void BitcoinExchange::loadDataFromCSV(const std::string &filename) {
 		std::string date = line.substr(0, commaPos);
 		std::string rateStr = line.substr(commaPos + 1);
 
+		std::stringstream ss(rateStr);
 		float rate = 0.0f;
-		
+		ss >> rate;
+		if (ss.fail()) {
+			std::cerr << "Error: invalid rate format => " << rateStr << std::endl;
+    		continue;
+		}
+		char leftOver;
+		if (ss >> leftOver) {
+			std::cerr << "Error: invalid format (extra data) => " << rateStr << std::endl;
+    		continue;
+		}
+		this->data[date] = rate;
 	}
-	
-
+	file.close();
 }
