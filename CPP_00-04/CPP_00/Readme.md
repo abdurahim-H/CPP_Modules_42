@@ -1,3 +1,5 @@
+![C++](https://img.shields.io/badge/C++-98-blue?logo=cplusplus) ![License](https://img.shields.io/badge/License-Free-red) ![Zombies](https://img.shields.io/badge/Zombies-Approved-green) 
+
 # C++ Module 00 - The Awakening
 
 Welcome, fellow code whisperer, to **C++ Module 00**, where we take our first fearless steps into the untamed wilds of C++. This module isn’t about "Hello, World!"—it’s about making noise, commanding attention, and managing chaos with an **awesome** (and totally not outdated) phonebook.
