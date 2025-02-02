@@ -1,4 +1,4 @@
-![C++](https://img.shields.io/badge/C++-98-blue?logo=cplusplus) ![License](https://img.shields.io/badge/License-Free-red) ![Zombies](https://img.shields.io/badge/Zombies-Approved-green) 
+![C++](https://img.shields.io/badge/C++-98-blue?logo=cplusplus) ![License](https://img.shields.io/badge/License-Free-red) ![FixedPoint](https://img.shields.io/badge/FixedPoint-Approved-green)  
 
 # C++ Module 02 - The Rise of Fixed-Point Arithmetic
 
